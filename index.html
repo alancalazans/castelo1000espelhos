@@ -7,24 +7,52 @@
 	<title>Castelo dos mil espelhos</title>
 	<link rel="stylesheet" href="assets/vendor/reveal/reveal.min.css">
 	<link rel="stylesheet" href="assets/vendor/reveal/dracula.min.css">
+
 </head>
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section><img src="assets/img/jpeg/01.jpeg" style="width: 56%;"></section>
-			<section><img src="assets/img/jpeg/02.jpeg" style="width: 56%;"></section>
-			<section><img src="assets/img/jpeg/03.jpeg" style="width: 56%;"></section>
-			<section><img src="assets/img/jpeg/04.jpeg" style="width: 56%;"></section>
-			<section><img src="assets/img/jpeg/05.jpeg" style="width: 56%;"></section>
-			<section><img src="assets/img/jpeg/06.jpeg" style="width: 56%;"></section>
-			<section><img src="assets/img/jpeg/07.jpeg" style="width: 56%;"></section>
-			<section><img src="assets/img/jpeg/08.jpeg" style="width: 56%;"></section>
-			<section><img src="assets/img/jpeg/09.jpeg" style="width: 56%;"></section>
+			<section><img src="assets/img/jpeg/01.jpeg"></section>
+			<section><img src="assets/img/jpeg/02.jpeg"></section>
+			<section><img src="assets/img/jpeg/03.jpeg"></section>
+			<section><img src="assets/img/jpeg/04.jpeg"></section>
+			<section><img src="assets/img/jpeg/05.jpeg"></section>
+			<section><img src="assets/img/jpeg/06.jpeg"></section>
+			<section><img src="assets/img/jpeg/07.jpeg"></section>
+			<section><img src="assets/img/jpeg/08.jpeg"></section>
+			<section><img src="assets/img/jpeg/09.jpeg"></section>
 		</div>
 	</div>
 	<script src="assets/vendor/reveal/reveal.min.js"></script>
 
 	<script>
+
+		function sizeOfThings(){
+			var windowWidth = window.innerWidth;
+			var windowHeight = window.innerHeight;
+
+			var screenWidth = screen.width;
+			var screenHeight = screen.height;
+
+			//document.querySelector('.window-size').innerHTML = windowWidth + 'x' + windowHeight;
+			//document.querySelector('.screen-size').innerHTML = screenWidth + 'x' + screenHeight;
+
+			// Get a NodeList of all .demo elements
+			const img = document.querySelectorAll('img');
+
+			// Change the text of multiple elements with a loop
+			img.forEach(element => {
+				element.setAttribute('width', windowWidth);
+				element.setAttribute('height', windowHeight);
+			});
+		};
+
+		sizeOfThings();
+
+		window.addEventListener('resize', function(){
+			sizeOfThings();
+		});
+
 		Reveal.initialize();
 	</script>
 </body>
